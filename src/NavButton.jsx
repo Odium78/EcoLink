@@ -1,7 +1,9 @@
-function NavButton(){
-    return(
-        <a href="#sdglist" className="mt-5 navButton">&#8595;</a>
-    )
+function NavButton({ dest = "", icon = "\u2193" }) {
+  return (
+    <a href={dest} className="mt-5 navButton px-5 cursor-pointer">
+      {icon}
+    </a>
+  );
 }
 
-export default NavButton
+export default NavButton;

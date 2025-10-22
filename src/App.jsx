@@ -1,13 +1,10 @@
-import LandingArea from "./LandingArea"
-import SDGList from "./SDGList"
+import { useMediaQuery } from "react-responsive"
+import WidescreenViewport from "./WidescreenViewport"
+import PhoneViewport from "./PhoneViewport"
 
 function App(){
-  return (
-    <>
-      <LandingArea />
-      <SDGList />
-    </>
-  )
+  const isMobile = useMediaQuery({ maxWidth: 767 })
+  return isMobile ? <PhoneViewport /> : <WidescreenViewport />
 }
 
 export default App

@@ -1,11 +1,35 @@
 @import "tailwindcss";
 
 @layer components{
-    .navButton{
-        @apply text-7xl hover:text-8xl transition-all ease-in-out;
+    .navButton {
+      @apply text-7xl hover:text-8xl transition-all ease-in-out;
     }
 
     .sdg {
-        @apply w-50 h-45 hover:mb-8 transition-all ease-in-out duration-300;
+      @apply w-50 h-45 rounded-lg hover:-translate-y-5 transition-all ease-in-out duration-300;
     }
+
+    .float {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .window {
+      @apply py-2 me-160 mt-10 text-white text-lg font-semibold rounded-xl shadow-lg bg-violet-500 hover:bg-violet-600 transition-all duration-300
+    }
+}
+
+@layer utilities{
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0.5rem);
+    }
+    50% {
+      transform: translateY(-0.25rem); /* equivalent to -translate-y-5 */
+    }
+  }
+}
+
+html, body{
+  height: 100%;
+  overflow: hidden;
 }
