@@ -1,4 +1,3 @@
-import { ReactTyped } from "react-typed"
 import NavButton from "./NavButton"
 import SDG6 from "./assets/sdg6.png"
 import SDG13 from "./assets/sdg13.png"

@@ -8,7 +8,7 @@ function LandingArea() {
     <div className="flex flex-col justify-center items-center h-screen snap-center" id="home">
         <h1 className="text-[14rem] font-bold text-shadow-lg text-shadow-violet-400">EcoLink</h1>
         <p className="text-4xl font-bold mt-0">Connecting&nbsp;
-            <ReactTyped className="bg-gray-800"
+            <ReactTyped
                 strings={landingText}
                 typeSpeed={50}
                 backSpeed={40}
