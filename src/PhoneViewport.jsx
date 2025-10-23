@@ -5,6 +5,7 @@ import climateActionPic from "./assets/climateActionPic.png"
 import lifeOnLandPic from "./assets/lifeOnLandPic.png"
 import lifeBelowWaterPic from "./assets/lifeBelowWaterPic.png"
 import MobileRender from "./MobileRender"
+import MobileFooter from "./MobileFooter"
 
 
 function PhoneViewport(){
@@ -57,14 +58,19 @@ livelihoods and climate resilience..`,
   ]
 
     return (
-        <div className="h-screen overflow-y-scroll snap-y snap-mandatory snap-always scroll-smooth">
-            <MobileLandingArea />
-            <MobileSDGList />
-            <MobileRender items={sdg6} nextId="#sdg13"/>
-            <MobileRender items={sdg13} nextId="#sdg14"/>
-            <MobileRender items={sdg14} nextId="#sdg15"/>
-            <MobileRender items={sdg15} last={true}/>
-        </div>
+        <>
+            <div className="h-screen overflow-y-scroll snap-y snap-mandatory snap-always scroll-smooth">
+                <MobileLandingArea />
+                <MobileSDGList />
+                <MobileRender items={sdg6} nextId="#sdg13"/>
+                <MobileRender items={sdg13} nextId="#sdg14"/>
+                <MobileRender items={sdg14} nextId="#sdg15"/>
+                <MobileRender items={sdg15} last={true}/>
+            </div>
+            <MobileFooter />
+        </>
+        
+
     )
 }
 

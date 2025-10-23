@@ -5,6 +5,7 @@ import cleanWaterPic from "./assets/cleanWaterPic.png"
 import climateActionPic from "./assets/climateActionPic.png"
 import lifeOnLandPic from "./assets/lifeOnLandPic.png"
 import lifeBelowWaterPic from "./assets/lifeBelowWaterPic.png"
+import Footer from "./Footer"
 
 function WidescreenViewport(){
   const sdg6 = [
@@ -56,14 +57,17 @@ livelihoods and climate resilience..`,
   ]
 
   return (
-    <div className="h-screen overflow-y-scroll snap-y snap-mandatory snap-always scroll-smooth">
-      <LandingArea />
-      <SDGList />
-      <Render items={sdg6} nextId="#sdg13" />
-      <Render items={sdg13} nextId="#sdg14" />
-      <Render items={sdg14} nextId="#sdg15" />
-      <Render items={sdg15} last={true} />
-    </div>
+    <>
+      <div className="h-screen overflow-y-scroll snap-y snap-mandatory snap-always scroll-smooth">
+        <LandingArea />
+        <SDGList />
+        <Render items={sdg6} nextId="#sdg13" />
+        <Render items={sdg13} nextId="#sdg14" />
+        <Render items={sdg14} nextId="#sdg15" />
+        <Render items={sdg15} last={true} />
+      </div>
+      <Footer />
+    </>
   )
 }
 
