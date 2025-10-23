@@ -17,7 +17,10 @@ function Window({ desc }) {
   return (
     <>
       {/* Button to open overlay */}
-      <button onClick={openWindow} className="bg-purple-500 p-2.5 rounded-xl font-semibold hover:bg-purple-700">
+      <button
+        onClick={openWindow}
+        className="bg-purple-500 p-2.5 rounded-xl font-semibold hover:bg-purple-700"
+      >
         Open Case Studies
       </button>
 
@@ -33,11 +36,14 @@ function Window({ desc }) {
           <div
             className={`bg-zinc-900/90 text-white rounded-2xl p-8 w-11/12 max-w-2xl shadow-2xl transform transition-all duration-300 ease-out ${
               isOpen ? "scale-100 opacity-100" : "scale-75 opacity-0"
-            }`}
+            } overflow-y-auto max-h-[85vh]`}
             onClick={(e) => e.stopPropagation()}
           >
-            <h1 className="text-2xl font-bold mb-4">Case Studies</h1>
-            <p className="whitespace-pre-line text-zinc-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{__html: desc}}/>
+            <h1 className="text-xl font-bold mb-4">Case Studies</h1>
+            <h3
+              className="whitespace-pre-line text-zinc-300 leading-relaxed mb-6"
+              dangerouslySetInnerHTML={{ __html: desc }}
+            />
 
             <div className="flex justify-end">
               <button

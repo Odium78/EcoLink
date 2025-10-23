@@ -5,7 +5,7 @@ export default function Carousel({ children }) {
   const [emblaRef] = useEmblaCarousel();
 
   return (
-    <div className="overflow-hidden w-full px-20 pb-13" ref={emblaRef}>
+    <div className="overflow-hidden w-full px-30 pb-13" ref={emblaRef}>
       <div className="flex">
         {React.Children.map(children, (child, i) => (
           <div

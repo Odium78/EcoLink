@@ -95,8 +95,8 @@ have been profiled as community success stories linking SDG15 to livelihoods.`
         id={`sdg${i.id}`}
         className="">
             <div className="flex flex-col justify-center items-center h-screen snap-center">
-                <div className="flex flex-col shadow-2xl shadow-slate-700">
-                    <img src={i.image} className="h-60 w-90 object-cover rounded-xl [object-position:center_60%]"></img>
+                <div className="flex flex-col">
+                    <img src={i.image} className="h-60 w-90 object-cover rounded-xl [object-position:center_60%]  shadow-2xl shadow-slate-700"></img>
                 </div>
                 <h1 className="text-xl font-bold text-shadow-md text-shadow-violet-400 mt-25">{i.title}</h1>
                 <div className="flex flex-col px-6 py-5">
@@ -107,7 +107,7 @@ have been profiled as community success stories linking SDG15 to livelihoods.`
                 <div className="flex flex-col justify-center items-center">
                     <MobileWindow desc={msg}/>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center ">
                     <NavButton dest="#sdglist" icon="↑" />
                     {!last && <NavButton dest={nextId} icon="↓" />}
                 </div>
