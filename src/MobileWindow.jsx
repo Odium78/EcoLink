@@ -48,8 +48,7 @@ function Window({ desc }) {
             <div className="flex justify-end">
               <button
                 onClick={closeWindow}
-                className="px-5 py-2 bg-purple-600 rounded-lg hover:bg-purple-700 transition-all"
-              >
+                className="px-5 py-2 bg-purple-600 rounded-lg hover:bg-purple-700 transition-all">
                 Close
               </button>
             </div>
