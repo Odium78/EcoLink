@@ -56,6 +56,14 @@ livelihoods and climate resilience..`,
       image: lifeOnLandPic
     },
   ]
+  const sdg16 = [
+    {
+      id: 16,
+      title: "Academic Sources",
+      desc: `Here are the studies and links mentioned in each studies, these are retrieved from various sources such as
+      the official United Nation. The texts provided are clickable links.`
+    },
+  ]
 
     return (
         <>
@@ -65,7 +73,8 @@ livelihoods and climate resilience..`,
                 <MobileRender items={sdg6} nextId="#sdg13"/>
                 <MobileRender items={sdg13} nextId="#sdg14"/>
                 <MobileRender items={sdg14} nextId="#sdg15"/>
-                <MobileRender items={sdg15} last={true}/>
+                <MobileRender items={sdg15} nextId="#sdg16"/>
+                <MobileRender items={sdg16} last={true} isSources={true}/>
             </div>
             <MobileFooter />
         </>

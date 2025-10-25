@@ -4,7 +4,7 @@ import SDG13 from "./assets/sdg13.png"
 import SDG14 from "./assets/sdg14.png"
 import SDG15 from "./assets/sdg15.png"
 import Carousel from "./Carousel"
-
+import AcademicSourcesPic from "./assets/AcademicSourcesPic.png"
 
 function MobileSDGList() {
     const landingText = ["SDGs", "Communities", "Data"]
@@ -17,6 +17,7 @@ function MobileSDGList() {
                     <a href="#sdg13"><img src={SDG13} className="w-40 h-40 rounded-3xl shadow-2xl shadow-green-800"></img></a>
                     <a href="#sdg14"><img src={SDG14} className="w-40 h-40 rounded-3xl shadow-2xl shadow-blue-400"></img></a>
                     <a href="#sdg15"><img src={SDG15} className="w-40 h-40 rounded-3xl shadow-2xl shadow-lime-500"></img></a>
+                    <a href="#sdg16"><img src={AcademicSourcesPic} className="w-40 h-40 rounded-3xl shadow-2xl shadow-zinc-400"></img></a>
             </Carousel>
             <div className="flex flex-col text-center">
                 <p className="text-xs px-5">{`(Swipe Left and Right, tap to choose)`}</p>

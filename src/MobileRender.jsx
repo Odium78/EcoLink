@@ -9,13 +9,14 @@ function MobileRender({
     image: "https://placehold.co/400x600"
   }],
   nextId = "#6",
-  last = false
+  last = false,
+  isSources = false
 }) {
 
   return items.map((i, index) => {
     let msg = ""
 
-    // bruh wtf is this
+    // what is this
     switch (i.id) {
       case 6:
         msg = `<strong>1. PRO-WATER (Philippines) — integrated community program</strong>
@@ -86,6 +87,47 @@ timber forest products.</li>
 <li><strong>Equator Initiative winners & community projects</strong></li>Multiple local projects worldwide that restore forests, protect endangered species, and create green jobs
 have been profiled as community success stories linking SDG15 to livelihoods.`
         break
+      case 16:
+          msg = `<a href="https://www.un.org/sustainabledevelopment/water-and-sanitation" target="_blank">
+  Martin. (2025, September 10). Goal 6: Water and Sanitation - United Nations Sustainable Development. United Nations Sustainable Development.
+</a>
+<a href="https://globalgoals.org/goals/6-clean-water-and-sanitation" target="_blank">
+  Goal 6: Clean water and sanitation - The Global Goals. (2024, January 23). The Global Goals.
+</a><a href="https://www.sdgfund.org/case-study/formulation-localized-customer-service-code-philippines" target="_blank">
+  Formulation of a localized customer service code in the Philippines. (2018, May 14). Sustainable Development Goals Fund.
+</a>
+<a href="https://www.un.org/sustainabledevelopment/goal-14-life-below-water" target="_blank">
+  Yinuo. (2024, April 30). Goal 14: Life Below Water - United Nations Sustainable Development. United Nations Sustainable Development.
+</a>
+<a href="https://www.wetlands.org/case-study/scaling-science-based-mangrove-restoration-in-the-philippines" target="_blank">
+  Wetlands International. (2025, March 20). Scaling science-based mangrove restoration in the Philippines - Wetlands International.
+</a>
+<a href="https://www.equatorinitiative.org/" target="_blank">
+  Equator Initiative – The Equator Initiative brings together the United Nations, governments, civil society, businesses and grassroots organizations to recognize and advance local sustainable development solutions for people, nature and resilient communities. (n.d.).
+</a>
+<a href="https://sdgs.un.org/goals/goal15" target="_blank">
+  Goal 15 | Department of Economic and Social Affairs. (n.d.).
+</a>
+<a href="https://www.adb.org/publications/mainstreaming-climate-adaptation-philippines" target="_blank">
+  Asian Development Bank. (2020). Mainstreaming climate adaptation in local development planning: Lessons from the Philippines. ADB Publications.
+</a>
+<a href="https://www.denr.gov.ph" target="_blank">
+  DENR - Department of Environment and Natural Resources. (2021). Community-based coastal protection and mangrove rehabilitation projects in the Philippines.
+</a>
+<a href="https://www.undp.org" target="_blank">
+  United Nations Development Programme (UNDP). (2022). Youth and climate action: Empowering youth climate champions in Asia-Pacific.
+</a>
+<a href="https://www.fao.org" target="_blank">
+  Food and Agriculture Organization (FAO). (2021). Climate-smart agriculture case studies in Southeast Asia. FAO Regional Office for Asia and the Pacific.
+</a>
+<a href="https://www.unwomen.org" target="_blank">
+  UN Women. (2020). Women, resilience and climate action in the Philippines: Case studies and policy recommendations. UN Women Regional Office for Asia and the Pacific.
+</a>
+<a href="https://sdgs.un.org/goals/goal13" target="_blank">
+  United Nations. (2023). Goal 13: Climate action. United Nations Sustainable Development Goals.
+</a>
+`
+        break
       default:
         msg = `Message not found!`
     }
@@ -95,9 +137,9 @@ have been profiled as community success stories linking SDG15 to livelihoods.`
         id={`sdg${i.id}`}
         className="">
             <div className="flex flex-col justify-center items-center h-screen snap-center">
-                <div className="flex flex-col">
+              {!isSources && <div className="flex flex-col">
                     <img src={i.image} className="h-60 w-90 object-cover rounded-xl [object-position:center_60%]  shadow-2xl shadow-slate-700"></img>
-                </div>
+                </div>}
                 <h1 className="text-xl font-bold text-shadow-md text-shadow-violet-400 mt-25">{i.title}</h1>
                 <div className="flex flex-col px-6 py-5">
                     <h3 className="text-center text-sm">
@@ -105,7 +147,7 @@ have been profiled as community success stories linking SDG15 to livelihoods.`
                     </h3>
                 </div>
                 <div className="flex flex-col justify-center items-center">
-                    <MobileWindow desc={msg}/>
+                    {isSources ? <MobileWindow desc={msg} title="Open Links"/> : <MobileWindow desc={msg}/>}
                 </div>
                 <div className="flex items-center ">
                     <NavButton dest="#sdglist" icon="↑" />

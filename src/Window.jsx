@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Window({ desc }) {
+function Window({ desc, title = "Open Case Studies" }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -18,7 +18,7 @@ function Window({ desc }) {
     <>
       {/* Button to open overlay */}
       <button onClick={openWindow} className="window">
-        Open Case Studies
+        {title}
       </button>
 
       {/* Overlay */}
@@ -37,7 +37,7 @@ function Window({ desc }) {
             onClick={(e) => e.stopPropagation()}
           >
             <h1 className="text-2xl font-bold mb-4">Case Studies</h1>
-            <p className="whitespace-pre-line text-zinc-300 leading-relaxed mb-6" dangerouslySetInnerHTML={{__html: desc}}/>
+            <p className="whitespace-pre-line text-zinc-300 leading-relaxed mb-6 overflow-y-auto max-h-[75vh]" dangerouslySetInnerHTML={{__html: desc}}/>
 
             <div className="flex justify-end">
               <button

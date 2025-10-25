@@ -10,13 +10,14 @@ function Render({
     image: "https://placehold.co/400x600"
   }],
   nextId = "#6",
-  last = false
+  last = false,
+  isSources = false
 }) {
 
   return items.map((i, index) => {
     let msg = ""
 
-    // bruh wtf is this
+    // what is this
     switch (i.id) {
       case 6:
         msg = `<strong>1. PRO-WATER (Philippines) — integrated community program</strong>
@@ -87,6 +88,47 @@ timber forest products.</li>
 <li><strong>Equator Initiative winners & community projects</strong></li>Multiple local projects worldwide that restore forests, protect endangered species, and create green jobs
 have been profiled as community success stories linking SDG15 to livelihoods.`
         break
+        case 16:
+          msg = `<a href="https://www.un.org/sustainabledevelopment/water-and-sanitation" target="_blank">
+  Martin. (2025, September 10). Goal 6: Water and Sanitation - United Nations Sustainable Development. United Nations Sustainable Development.
+</a>
+<a href="https://globalgoals.org/goals/6-clean-water-and-sanitation" target="_blank">
+  Goal 6: Clean water and sanitation - The Global Goals. (2024, January 23). The Global Goals.
+</a><a href="https://www.sdgfund.org/case-study/formulation-localized-customer-service-code-philippines" target="_blank">
+  Formulation of a localized customer service code in the Philippines. (2018, May 14). Sustainable Development Goals Fund.
+</a>
+<a href="https://www.un.org/sustainabledevelopment/goal-14-life-below-water" target="_blank">
+  Yinuo. (2024, April 30). Goal 14: Life Below Water - United Nations Sustainable Development. United Nations Sustainable Development.
+</a>
+<a href="https://www.wetlands.org/case-study/scaling-science-based-mangrove-restoration-in-the-philippines" target="_blank">
+  Wetlands International. (2025, March 20). Scaling science-based mangrove restoration in the Philippines - Wetlands International.
+</a>
+<a href="https://www.equatorinitiative.org/" target="_blank">
+  Equator Initiative – The Equator Initiative brings together the United Nations, governments, civil society, businesses and grassroots organizations to recognize and advance local sustainable development solutions for people, nature and resilient communities. (n.d.).
+</a>
+<a href="https://sdgs.un.org/goals/goal15" target="_blank">
+  Goal 15 | Department of Economic and Social Affairs. (n.d.).
+</a>
+<a href="https://www.adb.org/publications/mainstreaming-climate-adaptation-philippines" target="_blank">
+  Asian Development Bank. (2020). Mainstreaming climate adaptation in local development planning: Lessons from the Philippines. ADB Publications.
+</a>
+<a href="https://www.denr.gov.ph" target="_blank">
+  DENR - Department of Environment and Natural Resources. (2021). Community-based coastal protection and mangrove rehabilitation projects in the Philippines.
+</a>
+<a href="https://www.undp.org" target="_blank">
+  United Nations Development Programme (UNDP). (2022). Youth and climate action: Empowering youth climate champions in Asia-Pacific.
+</a>
+<a href="https://www.fao.org" target="_blank">
+  Food and Agriculture Organization (FAO). (2021). Climate-smart agriculture case studies in Southeast Asia. FAO Regional Office for Asia and the Pacific.
+</a>
+<a href="https://www.unwomen.org" target="_blank">
+  UN Women. (2020). Women, resilience and climate action in the Philippines: Case studies and policy recommendations. UN Women Regional Office for Asia and the Pacific.
+</a>
+<a href="https://sdgs.un.org/goals/goal13" target="_blank">
+  United Nations. (2023). Goal 13: Climate action. United Nations Sustainable Development Goals.
+</a>
+`
+      break
       default:
         msg = `Message not found!`
     }
@@ -101,7 +143,6 @@ have been profiled as community success stories linking SDG15 to livelihoods.`
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        {/* Text section */}
         <div className="flex flex-col max-w-[850px]">
           <h1 className="text-7xl font-extrabold text-white text-shadow-md text-shadow-violet-400">
             {i.title}
@@ -109,13 +150,8 @@ have been profiled as community success stories linking SDG15 to livelihoods.`
           <p
             lang="en"
             style={{ hyphens: "auto", WebkitHyphens: "auto" }}
-            className="text-2xl leading-relaxed text-gray-300 mt-6 text-justify break-words"
-          >
-            {i.desc}
-          </p>
-
-          {/* Pass dynamic message to Window */}
-          <Window desc={msg} />
+            className="text-2xl leading-relaxed text-gray-300 mt-6 text-justify break-words" dangerouslySetInnerHTML={{__html: i.desc}} />
+          {isSources ? <Window desc={msg} title="Open Links"/> : <Window desc={msg}/>}
 
           <div className="flex flex-col items-center pt-10">
             <div className="flex justify-center items-center">
@@ -133,11 +169,11 @@ have been profiled as community success stories linking SDG15 to livelihoods.`
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          <img 
+          {!isSources && <img 
             src={i.image} 
             className="h-full w-full object-cover rounded-4xl shadow-2xl shadow-slate-700"
             alt={i.title}
-          />
+          />}
         </motion.div>
       </motion.div>
     )

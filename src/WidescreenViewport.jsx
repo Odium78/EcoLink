@@ -56,6 +56,15 @@ livelihoods and climate resilience..`,
     },
   ]
 
+  const sdg16 = [
+    {
+      id: 16,
+      title: "Academic Sources",
+      desc: `Here are the studies and links mentioned in each studies, these are retrieved from various sources such as
+      the official United Nation. The texts provided are clickable links.`
+    },
+  ]
+
   return (
     <>
       <div className="h-screen overflow-y-scroll snap-y snap-mandatory snap-always scroll-smooth">
@@ -64,7 +73,8 @@ livelihoods and climate resilience..`,
         <Render items={sdg6} nextId="#sdg13" />
         <Render items={sdg13} nextId="#sdg14" />
         <Render items={sdg14} nextId="#sdg15" />
-        <Render items={sdg15} last={true} />
+        <Render items={sdg15} nextId="#sdg16" />
+        <Render items={sdg16} last={true} isSources={true}/>
       </div>
       <Footer />
     </>

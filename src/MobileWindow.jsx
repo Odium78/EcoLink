@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Window({ desc }) {
+function Window({ desc, title = "Open Case Studies" }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -21,7 +21,7 @@ function Window({ desc }) {
         onClick={openWindow}
         className="bg-purple-500 p-2.5 rounded-xl font-semibold hover:bg-purple-700"
       >
-        Open Case Studies
+        {title}
       </button>
 
       {/* Overlay */}
